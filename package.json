@@ -1,0 +1,44 @@
+{
+  "name": "famous_it_solutions_backend",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node dist/src/server.js",
+    "dev": "npx tsx watch src/server.ts",
+    "migrate": "npx prisma migrate dev",
+    "generate": "npx prisma generate",
+    "postinstall": "prisma generate",
+    "seedAdmin": "npx tsx src/scripts/seedAdmin.ts",
+    "seed": "npx tsx src/scripts/seed.ts",
+    "build": "prisma generate && tsup src/index.ts --format esm --platform node --target node20 --outDir api --external pg-native"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TalhaShahidKhan/famous_it_solutions_backend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TalhaShahidKhan/famous_it_solutions_backend/issues"
+  },
+  "homepage": "https://github.com/TalhaShahidKhan/famous_it_solutions_backend#readme",
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/node": "^25.5.0",
+    "@types/pg": "^8.20.0",
+    "prisma": "^7.5.0",
+    "tsx": "^4.21.0",
+    "typescript": "^6.0.2"
+  },
+  "dependencies": {
+    "@prisma/adapter-pg": "^7.5.0",
+    "@prisma/client": "^7.5.0",
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "pg": "^8.20.0"
+  }
+}
